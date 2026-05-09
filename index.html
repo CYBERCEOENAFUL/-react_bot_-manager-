@@ -3,230 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER ENAFUL - Reaction Bot System</title>
+    <title>CYBER  ENAFUL Business</title>
     <style>
-        :root {
-            --bg: #0d1117;
-            --card: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --accent: #58a6ff;
-            --success: #238636;
-        }
-
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 450px;
-        }
-
-        /* প্রোফাইল সেকশন - মাস্টার ব্র্যান্ডিং */
-        .profile-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .profile-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            margin-bottom: 10px;
-        }
-
-        .profile-name {
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-            margin: 5px 0;
-        }
-
-        .status-badge {
-            background: rgba(88, 166, 255, 0.1);
-            color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: bold;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 15px;
-        }
-
-        .stat-item {
-            background: var(--bg);
-            padding: 8px;
-            border-radius: 8px;
-            text-align: center;
-            font-size: 12px;
-            border: 1px solid var(--border);
-        }
-
-        /* মেইন মেকার কার্ড */
-        .maker-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-
-        h2 {
-            font-size: 18px;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .input-group {
-            margin: 20px 0;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #8b949e;
-        }
-
-        input {
-            width: 100%;
-            padding: 12px;
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            color: #fff;
-            box-sizing: border-box;
-            outline: none;
-        }
-
-        .bot-link-box {
-            background: var(--bg);
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            margin: 15px 0;
-            word-break: break-all;
-            color: #58a6ff;
-            font-family: monospace;
-            display: none; /* শুরুতে লুকানো */
-        }
-
-        .btn-main {
-            width: 100%;
-            padding: 14px;
-            background: linear-gradient(45deg, #238636, #2ea043);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-weight: bold;
-            font-size: 16px;
-            cursor: pointer;
-            text-decoration: none;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            filter: brightness(1.2);
-            transform: translateY(-2px);
-        }
-
-        .instruction {
-            margin-top: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 13px;
-            text-align: left;
-            line-height: 1.6;
-        }
+        :root { --primary: #00d2ff; --bg: #0d1117; --card: #161b22; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; padding: 15px; }
+        .container { max-width: 450px; margin: auto; background: var(--card); padding: 20px; border-radius: 20px; border: 1px solid #30363d; }
+        .business-badge { background: gold; color: black; padding: 2px 10px; border-radius: 5px; font-weight: bold; font-size: 10px; }
+        .status-box { background: #0d1117; padding: 15px; border-radius: 12px; margin: 15px 0; border: 1px solid var(--primary); }
+        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; font-size: 12px; }
+        .bot-card { background: #21262d; padding: 10px; border-radius: 10px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; }
+        input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #30363d; background: #010409; color: white; box-sizing: border-box; }
+        .btn-pay { width: 100%; background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: white; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="profile-card">
-        <img src="https://t.me/i/userpic/320/KING_OF_ENAFUL.jpg" alt="Profile" class="profile-img">
-        <div class="profile-name">BOSS ENAFUL</div>
-        <span class="status-badge">🔱 Master Developer</span>
-        <div class="stats-grid">
-            <div class="stat-item"><b>Level:</b> 1</div>
-            <div class="stat-item"><b>XP:</b> 1/9</div>
-        </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>🚀 ENAFUL MAKER</h2>
+        <span class="business-badge">BUSINESS v3.0</span>
+    </div>
+    
+    <div class="status-box">
+        <strong>Business Insights:</strong><br>
+        <span>Running Bots: <b id="run">0</b></span> | <span>Revenue: <b style="color: #3fb950;">Active</b></span>
     </div>
 
-    <div class="maker-card" id="contentCard">
-        <h2 id="cardTitle">Reaction Bot Maker</h2>
-        
-        <div id="makerSection">
-            <div class="input-group">
-                <label>Bot Token</label>
-                <input type="text" id="token" placeholder="8630520684:AAEYuZR...">
-            </div>
-            <button class="btn-main" onclick="createBot()">🚀 CREATE MY BOT</button>
-        </div>
+    <input type="text" id="token" placeholder="Bot Token (e.g. 12345:ABC...)">
+    <input type="text" id="emojis" placeholder="Input Emojis (Total 100 Supported)">
 
-        <div id="userBotSection" style="display: none;">
-            <p style="font-size: 14px; color: #8b949e;">আপনার বট সচল আছে। নিচের লিঙ্কটি ব্যবহার করুন।</p>
-            <div class="bot-link-box" id="userBotLink" style="display: block;"></div>
-            <a href="#" id="openBotBtn" class="btn-main">🚀 OPEN YOUR BOT</a>
-        </div>
+    <div class="feature-grid">
+        <label><input type="checkbox" checked> ⚡ Fast React</label>
+        <label><input type="checkbox" checked> 🛡️ Anti-Ban</label>
+        <label><input type="checkbox" checked> 💬 Group/Inbox</label>
+        <label><input type="checkbox" checked> 📊 Analytics</label>
+    </div>
 
-        <div class="instruction">
-            <b id="insTitle">নির্দেশিকা:</b><br>
-            <span id="insText">• @BotFather থেকে আপনার টোকেনটি নিয়ে এখানে পেস্ট করুন। আপনার বটের এডমিন প্যানেল অটো সেটআপ হয়ে যাবে।</span>
+    <button class="btn-pay" onclick="handleBusiness()">CREATE BUSINESS BOT</button>
+
+    <div style="margin-top: 20px;">
+        <h4 style="font-size: 14px; color: var(--primary);">📂 Manage Your Business Bots</h4>
+        <div id="activeList">
+            <p style="font-size: 11px; color: #8b949e;">No active bots found. Create one to start.</p>
         </div>
     </div>
 </div>
 
 <script>
-    window.onload = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const botName = urlParams.get('bot');
-
-        // যদি URL-এ ?bot= থাকে, তবে ইউজার মোড দেখাবে
-        if (botName) {
-            document.getElementById('cardTitle').innerText = "Your Active Bot";
-            document.getElementById('makerSection').style.display = "none";
-            document.getElementById('userBotSection').style.display = "block";
-            document.getElementById('userBotLink').innerText = "https://t.me/" + botName;
-            document.getElementById('openBotBtn').href = "https://t.me/" + botName;
-            
-            document.getElementById('insTitle').innerText = "বট সেটিংস:";
-            document.getElementById('insText').innerHTML = "• এই লিঙ্কটি আপনার ইউজারদের সাথে শেয়ার করুন।<br>• বটের এডমিন প্যানেল আপনার কমান্ডের মাধ্যমে পরিচালিত হবে।";
-        }
-    };
-
-    function createBot() {
-        let token = document.getElementById('token').value;
-        if(token.length > 20 && token.includes(':')) {
-            alert("সফল হয়েছে! আপনার রিঅ্যাকশন বটটি তৈরি করা হচ্ছে...");
-        } else {
-            alert("সঠিক বোট টোকেন প্রদান করুন!");
-        }
+    function handleBusiness() {
+        const token = document.getElementById('token').value;
+        if(!token.includes(':')) { alert("Invalid Token!"); return; }
+        
+        document.getElementById('activeList').innerHTML = `
+            <div class="bot-card">
+                <span style="font-size: 12px;">${token.split(':')[0]}... [LIVE]</span>
+                <span style="color: #3fb950; font-size: 10px;">● CONNECTED</span>
+            </div>
+        `;
+        document.getElementById('run').innerText = "1";
+        alert("Bot Business Server-এ আপনার বটটি সাকসেসফুলি কানেক্ট করা হয়েছে!");
     }
 </script>
 
