@@ -3,65 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER  ENAFUL Business</title>
+    <title>CYBER  ENAFUL - Bot Manager</title>
     <style>
-        :root { --primary: #00d2ff; --bg: #0d1117; --card: #161b22; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; padding: 15px; }
-        .container { max-width: 450px; margin: auto; background: var(--card); padding: 20px; border-radius: 20px; border: 1px solid #30363d; }
-        .business-badge { background: gold; color: black; padding: 2px 10px; border-radius: 5px; font-weight: bold; font-size: 10px; }
-        .status-box { background: #0d1117; padding: 15px; border-radius: 12px; margin: 15px 0; border: 1px solid var(--primary); }
-        .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 15px 0; font-size: 12px; }
-        .bot-card { background: #21262d; padding: 10px; border-radius: 10px; margin-top: 10px; display: flex; justify-content: space-between; align-items: center; }
-        input { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: 1px solid #30363d; background: #010409; color: white; box-sizing: border-box; }
-        .btn-pay { width: 100%; background: linear-gradient(45deg, #00d2ff, #3a7bd5); color: white; padding: 15px; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+        :root { --bg: #0d1117; --card: #161b22; --primary: #238636; --danger: #da3633; --purple: #8957e5; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: #c9d1d9; margin: 0; padding: 10px; }
+        .app-container { max-width: 500px; margin: auto; }
+        .header { display: flex; align-items: center; padding: 15px; background: var(--card); border-radius: 15px; margin-bottom: 10px; border: 1px solid #30363d; }
+        .header img { width: 50px; border-radius: 50%; border: 2px solid var(--primary); margin-right: 15px; }
+        
+        .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .stat-item { background: var(--purple); color: white; padding: 12px; border-radius: 10px; text-align: center; font-weight: bold; cursor: pointer; }
+        
+        .action-btn { width: 100%; padding: 15px; margin: 5px 0; border: none; border-radius: 12px; font-weight: 600; cursor: pointer; text-align: left; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+        .btn-green { background: var(--primary); color: white; }
+        .btn-red { background: var(--danger); color: white; }
+        
+        input { width: 100%; padding: 12px; margin: 10px 0; border-radius: 8px; border: 1px solid #30363d; background: #010409; color: white; box-sizing: border-box; }
+        .footer-nav { position: fixed; bottom: 0; left: 0; width: 100%; background: #161b22; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #30363d; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <h2>🚀 ENAFUL MAKER</h2>
-        <span class="business-badge">BUSINESS v3.0</span>
-    </div>
-    
-    <div class="status-box">
-        <strong>Business Insights:</strong><br>
-        <span>Running Bots: <b id="run">0</b></span> | <span>Revenue: <b style="color: #3fb950;">Active</b></span>
-    </div>
-
-    <input type="text" id="token" placeholder="Bot Token (e.g. 12345:ABC...)">
-    <input type="text" id="emojis" placeholder="Input Emojis (Total 100 Supported)">
-
-    <div class="feature-grid">
-        <label><input type="checkbox" checked> ⚡ Fast React</label>
-        <label><input type="checkbox" checked> 🛡️ Anti-Ban</label>
-        <label><input type="checkbox" checked> 💬 Group/Inbox</label>
-        <label><input type="checkbox" checked> 📊 Analytics</label>
-    </div>
-
-    <button class="btn-pay" onclick="handleBusiness()">CREATE BUSINESS BOT</button>
-
-    <div style="margin-top: 20px;">
-        <h4 style="font-size: 14px; color: var(--primary);">📂 Manage Your Business Bots</h4>
-        <div id="activeList">
-            <p style="font-size: 11px; color: #8b949e;">No active bots found. Create one to start.</p>
+<div class="app-container">
+    <div class="header">
+        <img src="https://telegra.ph/file/dc339352643a6d71f76d4.jpg" alt="Logo">
+        <div>
+            <h3 style="margin:0;">AUTO REACTION BOT</h3>
+            <small style="color: #8b949e;">Owner: ENAFUL ❤️❤️❤️</small>
         </div>
     </div>
+
+    <div class="stat-grid">
+        <div class="stat-item" onclick="alert('Downloading Data...')">Download Users Data</div>
+        <div class="stat-item" onclick="alert('Loading Stats...')">Statistics</div>
+    </div>
+
+    <button class="action-btn btn-green">Customize Channel Emoji <span>⚙️</span></button>
+    <button class="action-btn btn-green">Customize Group Emoji <span>⚙️</span></button>
+    <button class="action-btn btn-green">Customize Welcome Caption <span>📝</span></button>
+    <button class="action-btn btn-green">Customize Welcome Photo <span>🖼️</span></button>
+
+    <button class="action-btn btn-red">Disable Button Color <span>❌</span></button>
+    <button class="action-btn btn-red">Disable Admin Panel Button <span>🔒</span></button>
+    <button class="action-btn btn-red">Enable Force Join <span>📢</span></button>
+
+    <div style="display:flex; gap:10px;">
+        <button class="action-btn" style="background:#8957e5; color:white;">Normal Broadcast</button>
+        <button class="action-btn" style="background:#8957e5; color:white;">Powerful Broadcast ↗️</button>
+    </div>
+
+    <input type="text" id="tokenInput" placeholder="Enter Bot Token to Deploy...">
+    <button onclick="deploy()" style="width:100%; padding:15px; background:white; color:black; border-radius:10px; font-weight:bold; margin-bottom: 80px;">DEPLOY TO SERVER</button>
+</div>
+
+<div class="footer-nav">
+    <span>🏠 Dashboard</span>
+    <span style="font-weight:bold; color:var(--primary);">⚡ Commands</span>
+    <span>📢 Broadcast</span>
 </div>
 
 <script>
-    function handleBusiness() {
-        const token = document.getElementById('token').value;
-        if(!token.includes(':')) { alert("Invalid Token!"); return; }
-        
-        document.getElementById('activeList').innerHTML = `
-            <div class="bot-card">
-                <span style="font-size: 12px;">${token.split(':')[0]}... [LIVE]</span>
-                <span style="color: #3fb950; font-size: 10px;">● CONNECTED</span>
-            </div>
-        `;
-        document.getElementById('run').innerText = "1";
-        alert("Bot Business Server-এ আপনার বটটি সাকসেসফুলি কানেক্ট করা হয়েছে!");
+    function deploy() {
+        let t = document.getElementById('tokenInput').value;
+        if(t) {
+            alert("Deploying Bot to ENAFUL Business Server...");
+        } else {
+            alert("Please enter a token!");
+        }
     }
 </script>
 
