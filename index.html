@@ -3,134 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AUTO REACTION BOT 3 - Admin Panel</title>
+    <title>CYBER 71 ENAFUL - Bot Maker Engine</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            /* স্ক্রিনশট ও আপনার পছন্দ অনুযায়ী পারফেক্ট কালার কোড */
             --bg-dark: #121212;
-            --btn-purple: #9d4edd; /* Download, Stats, Broadcast */
-            --btn-green: #38b000;  /* Customizations, Notice, Support */
-            --btn-red: #c1121f;    /* Disables, Force Join */
+            --btn-purple: #8957e5;
+            --btn-green: #238636;
+            --btn-red: #da3633;
             --text-main: #ffffff;
-            --text-sub: #f3c68f;   /* OWNER ENAFUL 💛 */
+            --text-sub: #f3c68f;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-dark);
-            /* আপনার দেওয়া নতুন স্পেসিফিক ইমেজ লিংক ব্যাকগ্রাউন্ড হিসেবে লক করা হলো */
-            background-image: linear-gradient(rgba(18, 18, 18, 0.82), rgba(18, 18, 18, 0.82)), url('https://i.supaimg.com/d8919cc0-dc9c-41e0-9c14-2ff75835e603/dd8de9f6-0a00-4dac-8477-2d4f43119bc6.jpg');
+            background-image: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://i.supaimg.com/d8919cc0-dc9c-41e0-9c14-2ff75835e603/dd8de9f6-0a00-4dac-8477-2d4f43119bc6.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: var(--text-main);
             margin: 0;
-            padding: 12px;
-            padding-bottom: 30px;
+            padding: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
+            min-height: 100vh;
+            justify-content: center;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
+            max-width: 420px;
             box-sizing: border-box;
         }
 
-        /* টেলিগ্রাম মেসেজ বক্সের ইন্টারফেস ডিজাইন */
         .header-box {
-            background: rgba(30, 30, 30, 0.75);
-            border-left: 4px solid #ff4d6d;
-            border-radius: 8px;
-            padding: 12px 16px;
-            margin-bottom: 15px;
+            background: rgba(22, 27, 34, 0.8);
+            border-left: 4px solid #8957e5;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .header-title {
-            font-weight: bold;
-            color: #4ea8de;
-            font-size: 16px;
-            margin: 0 0 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
+        .header-box h2 { margin: 0 0 5px 0; color: #4ea8de; font-size: 18px; }
+        .header-box p { margin: 0; color: var(--text-sub); font-weight: bold; font-size: 14px; }
 
-        .header-owner {
-            color: var(--text-sub);
-            font-weight: bold;
-            margin: 0 0 8px 0;
-        }
-
-        .header-status {
-            font-size: 14px;
-            color: #e5e5e5;
-            margin: 0;
-            line-height: 1.4;
-        }
-
-        /* ২ কলামের গ্রিড লেআউট */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 8px;
-        }
-
-        /* বাটন স্টাইল (হুবহু স্ক্রিনশটের মতো) */
         .btn {
             width: 100%;
-            padding: 14px 10px;
+            padding: 15px;
             border: none;
-            border-radius: 10px;
-            font-size: 14px;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: bold;
             color: #ffffff;
             cursor: pointer;
             text-align: center;
             box-sizing: border-box;
-            transition: background 0.2s, transform 0.1s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            margin-bottom: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
         }
 
-        .btn:active {
-            transform: scale(0.98);
-        }
+        .btn:active { transform: scale(0.97); }
 
-        .purple { background-color: var(--btn-purple); }
-        .purple:hover { background-color: #7b2cbf; }
+        .purple { background: linear-gradient(135deg, #8957e5, #6f42c1); }
+        .green { background: linear-gradient(135deg, #238636, #2ea44f); }
+        .red { background: linear-gradient(135deg, #da3633, #b62b28); }
+        .white-btn { background: #ffffff; color: #000000; }
 
-        .green { background-color: var(--btn-green); }
-        .green:hover { background-color: #2b9348; }
-
-        .red { background-color: var(--btn-red); }
-        .red:hover { background-color: #a01a1e; }
-
-        /* টোকেন ইনপুট ও ডেপ্লয় এরিয়া */
-        .deploy-section {
-            background: rgba(22, 27, 34, 0.85);
+        .form-panel {
+            background: rgba(30, 30, 30, 0.85);
             border: 1px solid #30363d;
             border-radius: 12px;
             padding: 15px;
             margin-top: 15px;
+            display: none;
             backdrop-filter: blur(5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
         }
 
-        .deploy-section label {
+        .form-panel label {
             display: block;
             font-size: 13px;
             color: #8b949e;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 500;
         }
 
-        .token-input {
+        .input-field {
             width: 100%;
             padding: 12px;
             background-color: #010409;
@@ -142,26 +109,9 @@
             margin-bottom: 12px;
         }
 
-        .token-input:focus {
+        .input-field:focus {
             border-color: #58a6ff;
             outline: none;
-        }
-
-        .btn-deploy {
-            width: 100%;
-            padding: 14px;
-            background-color: #ffffff;
-            color: #0d1117;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        .btn-deploy:hover {
-            background-color: #b1bbc6;
         }
     </style>
 </head>
@@ -170,62 +120,59 @@
 <div class="container">
 
     <div class="header-box">
-        <p class="header-title">💠 AUTO REACTION BOT 3 💠</p>
-        <p class="header-owner">Welcome To Admin /panel, OWNER ENAFUL 💛💛.</p>
-        <p class="header-status">You're An Admin of This Bot.<br>Default emojis are set: ❤️🥰😍😘👍</p>
+        <h2>🤖 AUTO REACTION BOT MAKER 3</h2>
+        <p>OWNER: ENAFUL 💛💛</p>
     </div>
 
-    <div class="grid-2">
-        <button class="btn purple" onclick="sendToBot('download_data')">Download Users Data</button>
-        <button class="btn purple" onclick="sendToBot('stats')">Statistics</button>
-    </div>
+    <button class="btn purple" onclick="sendAction('owner_profile')">👑 OWNER ID: 6823368645</button>
 
-    <button class="btn green" onclick="sendToBot('cust_channel')">Customize Channel Emoji</button>
-    <button class="btn green" onclick="sendToBot('cust_group')">Customize Group Emoji</button>
-    <button class="btn green" onclick="sendToBot('cust_caption')">Customize Welcome Caption</button>
-    <button class="btn green" onclick="sendToBot('cust_photo')">Customize Welcome Photo</button>
+    <button class="btn green" onclick="toggleForm()">👤 SET CLONE BOT ADMIN</button>
 
-    <button class="btn red" onclick="sendToBot('toggle_color')">Disable Button Color</button>
-    <button class="btn red" onclick="sendToBot('disable_panel')">Disable Admin Panel Button</button>
-    <button class="btn red" onclick="sendToBot('toggle_force_join')">Enable Force Join</button>
+    <button class="btn red" onclick="toggleForm()">🔑 ENTER BOT TOKEN</button>
 
-    <div class="grid-2">
-        <button class="btn purple" onclick="sendToBot('bc_normal')">Normal Broadcast</button>
-        <button class="btn purple" onclick="sendToBot('bc_powerful')">Powerful Broadcast ↗️</button>
-    </div>
+    <div class="form-panel" id="inputForm">
+        <label>👤 Admin Telegram ID:</label>
+        <input type="number" id="adminIdInput" class="input-field" placeholder="Enter Bot Admin's Telegram ID...">
 
-    <button class="btn green" onclick="sendToBot('dev_notice')">Developer Notice</button>
-    <button class="btn green" onclick="sendToBot('toggle_support')">Enable Support Button</button>
-
-    <div class="deploy-section">
-        <label for="tokenInput">🤖 DEPLOY SYSTEM</label>
-        <input type="text" id="tokenInput" class="token-input" placeholder="Enter Your Bot Token here...">
-        <button class="btn-deploy" onclick="deployBot()">DEPLOY TO SERVER</button>
+        <label>🔑 Bot Token:</label>
+        <input type="text" id="tokenInput" class="input-field" placeholder="Enter Your HTTP Bot Token...">
+        
+        <button class="btn white-btn" onclick="deployBotToServer()">🚀 DEPLOY & TRANSMIT FEATURES</button>
     </div>
 
 </div>
 
 <script>
-    // টেলিগ্রাম ওয়েব অ্যাপ কানেকশন চালু করা
     const tg = window.Telegram.WebApp;
     tg.ready();
-    tg.expand(); // পুরো স্ক্রিন জুড়ে ওপেন হবে
+    tg.expand();
 
-    // বাটন অ্যাকশন হ্যান্ডলার
-    function sendToBot(actionName) {
-        tg.sendData(actionName);
+    function sendAction(action) {
+        tg.sendData(action);
         tg.close();
     }
 
-    // টোকেন ট্রান্সফার ইঞ্জিন
-    function deployBot() {
+    function toggleForm() {
+        var form = document.getElementById('inputForm');
+        form.style.display = 'block';
+        document.getElementById('tokenInput').focus();
+    }
+
+    function deployBotToServer() {
+        let adminId = document.getElementById('adminIdInput').value.trim();
         let token = document.getElementById('tokenInput').value.trim();
-        if(token) {
-            tg.sendData("deploy_bot:" + token);
-            tg.close();
-        } else {
-            alert("Please enter a valid Bot Token first!");
+        
+        if(!adminId) {
+            alert("Please enter the Admin Telegram ID first!");
+            return;
         }
+        if(!token) {
+            alert("Please enter a valid Bot Token!");
+            return;
+        }
+
+        tg.sendData("deploy_clone:" + token + "#" + adminId);
+        tg.close();
     }
 </script>
 
